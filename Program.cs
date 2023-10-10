@@ -55,7 +55,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("Invalid input. Please enter a valid number or 'n' to exit.");
+                Console.WriteLine("Помилка!");
             }
         }
         static void CheckNumber()
