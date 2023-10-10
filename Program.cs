@@ -5,8 +5,8 @@ class Program
     static void Main()
     {
         while (true)
-        {        
-            Console.Clear(); 
+        {
+            Console.Clear();
             Console.WriteLine("Виберіть завдання:");
             Console.WriteLine("1. Завдання номер 1");
             Console.WriteLine("2. Завдання номер 2");
@@ -44,7 +44,7 @@ class Program
                         break;
                     case 6:
                         Pidlitky();
-                            break;
+                        break;
                     case 7:
                         Parnedil3();
                         break;
@@ -73,7 +73,7 @@ class Program
                     if (num < 0)
                     {
                         Console.WriteLine($"число {num} є від'ємним");
-                    }        
+                    }
                     else if (num == 0)
                     {
                         Console.WriteLine($"число {num} дорівнює 0");
@@ -81,8 +81,8 @@ class Program
                     else if (num > 0)
                     {
                         Console.WriteLine($"число {num} є додатнім");
-                    }  
-                }              
+                    }
+                }
             }
         }
         static void YearCheck()
@@ -109,41 +109,41 @@ class Program
             }
         }
         static void Taxes()
+        {
+            while (true)
             {
-                while (true)
+                Console.Write("ваш річний дохід в грн (щоб вернутися до вибору завдань впишіть 'n' ) - ");
+                string input3 = Console.ReadLine();
+                if (input3.ToLower() == "n")
                 {
-                    Console.Write("ваш річний дохід в грн (щоб вернутися до вибору завдань впишіть 'n' ) - ");
-                    string input3 = Console.ReadLine();
-                    if (input3.ToLower() == "n")
+                    break;
+                }
+                else if (int.TryParse(input3, out int income))
+                {
+                    if (income >= 6700 && income <= 16500)
                     {
-                        break;
-                    }
-                    else if (int.TryParse(input3, out int income))
-                    {
-                        if (income >= 6700 && income <= 16500)
-                        {
-                            double tax = income * 1/20;
+                        double tax = income * 1 / 20;
                         Console.WriteLine($"{tax} - ваш податок");
-                        }
-                        if (income > 16500 && income <= 36000 )
-                        {
-                            double tax = income * 3 / 50;
-                            Console.WriteLine($"{tax} - ваш податок");
+                    }
+                    if (income > 16500 && income <= 36000)
+                    {
+                        double tax = income * 3 / 50;
+                        Console.WriteLine($"{tax} - ваш податок");
 
-                        }
-                        if (income > 36000 && income <= 50000)
-                        {
-                            double tax = income * 7 / 100;
-                            Console.WriteLine($"{tax} - ваш податок");
-                        }
-                        if (income > 50000)
-                        {
-                            double tax = income * 1 / 10;
-                            Console.WriteLine($"{tax} - ваш податок");
-                        }
+                    }
+                    if (income > 36000 && income <= 50000)
+                    {
+                        double tax = income * 7 / 100;
+                        Console.WriteLine($"{tax} - ваш податок");
+                    }
+                    if (income > 50000)
+                    {
+                        double tax = income * 1 / 10;
+                        Console.WriteLine($"{tax} - ваш податок");
                     }
                 }
             }
+        }
         static void Symbols()
         {
             while (true)
@@ -151,9 +151,9 @@ class Program
                 Console.Write("введіть символ (щоб вернутися до вибору завдань впишіть 'n' ) - ");
                 string input4 = Console.ReadLine();
                 if (input4.ToLower() == "n")
-                    {
-                        break;
-                    }
+                {
+                    break;
+                }
                 else if (input4.Length == 1 && char.IsLetter(input4[0]))
                 {
                     char symbol = char.ToLower(input4[0]);
@@ -165,7 +165,7 @@ class Program
                     {
                         Console.WriteLine($"{symbol} є приголосна");
                     }
-                    
+
                 }
                 else
                 {
@@ -173,9 +173,9 @@ class Program
                 }
 
             }
-            
-            
-           
+
+
+
         }
         static void ThreeNumbers()
         {
@@ -189,7 +189,7 @@ class Program
                 {
                     break;
                 }
-                else if (int.TryParse(input5, out int num1)) 
+                else if (int.TryParse(input5, out int num1))
                 {
                     Console.Write("Число 2: ");
                     int num2 = int.Parse(Console.ReadLine());
@@ -200,7 +200,7 @@ class Program
                     Console.WriteLine($"{max_int} - найбільше число ");
                 }
 
-                    
+
             }
         }
         static void Pidlitky()
@@ -233,8 +233,8 @@ class Program
         }
 
         static void Parnedil3()
-        {  
-            
+        {
+
             while (true)
             {
                 Console.Write("Введіть число (або 'n' для виходу) - ");
@@ -250,7 +250,7 @@ class Program
                     {
                         Console.WriteLine($"Число {number} є парним і воно ділиться на 3");
                     }
-                    else  
+                    else
                     {
                         Console.WriteLine($"Число {number} не виконує умови завдання");
                     }
@@ -287,3 +287,4 @@ class Program
         }
     }
 }
+
